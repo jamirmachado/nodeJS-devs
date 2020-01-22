@@ -8,6 +8,7 @@ mongoose.connect('mongodb+srv://jamir:werto432@cluster0-8x0st.mongodb.net/app?re
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
+mongoose.set('useCreateIndex', true);
 app.use(express.json())
 app.use(routes);
 app.listen(3333);
