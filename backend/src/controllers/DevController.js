@@ -8,6 +8,13 @@ module.exports = {
         return response.json(devs);
     },
 
+    async destroy(request, response) {
+        const {github} = request.body;
+        const developer = await dev.deleteOne({ github }, function (err) {});
+
+        return response.json(developer);
+    },
+
     async store(request, response) {
         const {github, techs, latitude, longitude} = request.body;
         let developer = await dev.findOne( {github} );
