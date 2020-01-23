@@ -1,10 +1,12 @@
 const { Router } = require('express');
 const DevController = require('./controllers/DevController');
 const SearchController = require('./controllers/SearchController');
+const UpdateController = require('./controllers/UpdateController');
 const routes = Router();
 
 routes.get('/devs', DevController.index);
 routes.delete('/devs', DevController.destroy);
+routes.patch('/update', UpdateController.index);
 routes.get('/search', SearchController.index);
 routes.post('/devs', DevController.store);
 
